@@ -1,0 +1,49 @@
+:root {
+    --table-deep: #051F20;
+    --table-dark: #0B2B26;
+    --table-forest: #163832;
+    --table-green: #235347;
+    --table-sage: #8EB69B;
+    --table-light: #DAF1DE;
+}
+
+body {
+    background: var(--table-sage);
+    color: white;
+}
+
+h1 {
+    color: white
+}
+
+.users-table {
+    overflow: hidden;
+    border: 1px solid var(--table-sage);
+    border-radius: 10px;
+    background: var(--table-dark);
+    box-shadow: 0 8px 24px rgb(5 31 32 / 30%);
+}
+
+.users-table thead th {
+    padding: 14px 16px;
+    color: white;
+    background: var(--table-dark);
+    border-color: var(--table-sage);
+    font-weight: 600;
+}
+
+.users-table tbody td {
+    padding: 13px 16px;
+    color: white;
+    background: var(--table-dark);
+    border-color: var(--table-green);
+}
+
+.users-table.table-striped>tbody>tr:nth-of-type(odd)>* {
+    background: var(--table-forest);
+}
+
+.users-table.table-hover>tbody>tr:hover>* {
+    color: whitesmoke;
+    background: var(--table-green);
+}

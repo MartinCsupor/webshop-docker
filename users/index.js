@@ -147,7 +147,6 @@ async function editUser(user) {
     document.getElementById("phoneInput").value = user.phone
 }
 
-
 async function deleteUser(id) {
     const response = await fetch(`http://localhost:3000/users/${id}`, {
         method: "DELETE",
@@ -163,8 +162,15 @@ async function deleteUser(id) {
     } else {
         toast.className = "toast position-fixed top-0 start-0 m-3 p-3 show bg-danger border-0 shadow";
         p.className = "mb-0 fw-semibold text-white";
-        p.textContent = "Hiba történt a tölrés közben!";
+        p.textContent = "Hiba történt a törlés közben!";
     }
+
+    toast.appendChild(p);
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
 
     getUsers()
 }
